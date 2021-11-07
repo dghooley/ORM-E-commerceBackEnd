@@ -27,7 +27,7 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     include: [{
-      model: Tag,
+      model: Product,
       through: ProductTag
     },
   ],
@@ -40,7 +40,9 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
   // create a new tag
-  Tag.create(body)
+  Tag.create(body, {
+    
+  })
   .then((tag) => res.status(200).json(tag))
   .catch((err) => res.status(400).json(err))
 });
@@ -49,7 +51,7 @@ router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update(body, {
     where: {
-      id: params.id,
+      id: req.params.id,
     }, 
     include: [Tag],
 });
