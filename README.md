@@ -21,3 +21,4 @@
 * THEN I am able to successfully create, update, and delete data in my database
 
 #### Mockup Video
+https://watch.screencastify.com/v/a8gq5HtdaICcP5mnXaME
